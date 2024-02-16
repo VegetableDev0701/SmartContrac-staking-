@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StakedNftsResponse",
+  "type": "object",
+  "required": [
+    "nft_maps"
+  ],
+  "properties": {
+    "nft_maps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/StakedNftResponse"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "StakedNftResponse": {
+      "type": "object",
+      "required": [
+        "airdrop",
+        "lock_time",
+        "nft_id"
+      ],
+      "properties": {
+        "airdrop": {
+          "type": "boolean"
+        },
+        "lock_time": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "nft_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
